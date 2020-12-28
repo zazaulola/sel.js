@@ -1,11 +1,11 @@
 # sel.js
-Minimal querySelector and querySelectorAll shorter
+Minimal truncator for querySelector and querySelectorAll
 
 Inspired by `$()` and `$$()` from Browser DevTools. The main difference of my implementation is that the browser implementation of functions gets parameters from right to left, while my implementation processes parameters from left to right.
 
 ## Usage
 
-Example element structure
+For example DOM structure
 
     <div class="block1">
       <ul>
@@ -22,7 +22,7 @@ Example element structure
       </ul>
     </div>
 
-Code returns
+that code returns
 
     $('ul')                    // => first <ul>
     $(document,'ul')           // => first <ul>
@@ -30,3 +30,4 @@ Code returns
     $$('ul','li')              // => all <li> in first <ul> collection
     $$($('ul'),'li')           // => all <li> in first <ul> collection
     $$($('div'),'ul','li')     // => all <li> in first <ul> collection
+    $$(null,'ul','li')         // => null
